@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Financial Tracking Services</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/dc.css"/>
+        <link rel="stylesheet" type="text/css" href="css/site.css"/>
+        <script src="js/jquery.js"></script>
+        <script src="js/d3.min.js"></script>
+        <script src="js/crossfilter.v1.min.js"></script>
+        <script src="js/dc.js"></script>     
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-46399763-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>             
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h2>Financial Tracking Dashboard</h2>
+                <div class="col-md-4">
+                    <div id="count-info" class="col-xs-8">
+                        <span class="filter-count"></span> selected out of <span class="total-count"></span> records.
+                    </div>                        
+                    <div class="col-xs-4">
+                        <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All</a>
+                    </div>                                         
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Who is funding</h4>
+                    <div id="funder" class="chart"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <h4>Type of funding organisation</h4>
+                        <div id="type" class="chart"></div>
+                    </div>
+                    <div class="row">
+                        <h4>The amount of funding</h4>
+                        <div id="fundingtotal" class="chart">
+                            <h3>$<span class="filter-count"></span> (USD)</h3>
+                        </div>    
+                        <div id="amount"></div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    <script src="js/site.js"></script>
+    </body>
+</html>
