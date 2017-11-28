@@ -9,6 +9,7 @@ var proxyURL = "https://proxy.hxlstandard.org/data.json?strip-headers=on&url="+e
 //var proxyURL = "backup-data/data.json"
 
 function initVisual(data){
+    $('.dash').show();
     var funder_chart = dc.rowChart("#funder");
     var type_chart = dc.rowChart("#type");
     var amount_chart = dc.pieChart("#amount");
@@ -81,6 +82,7 @@ function initVisual(data){
     	.dimension(cf)
     	.group(all);
             
+    $('.sp-circle').remove();
 
     dc.renderAll();
 
@@ -141,6 +143,8 @@ function hxlProxyToJSON(input){
     });
     return output;
 }
+
+$('.dash').hide();
 
 var dataCall = $.ajax({ 
     type: 'GET', 
